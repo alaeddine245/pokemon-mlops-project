@@ -1,7 +1,9 @@
 from tensorflow.keras.utils import load_img, img_to_array
+import numpy as np
+from constants import IMG_WIDTH, IMG_HEIGHT 
 
 def predict_image(model, image_path):
-  img = load_img(image_path, target_size=(img_width, img_height))
+  img = load_img(image_path, target_size=(IMG_WIDTH, IMG_HEIGHT))
   x = img_to_array(img)
   x = np.expand_dims(x, axis=0)
 
