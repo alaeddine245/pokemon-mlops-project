@@ -1,13 +1,13 @@
 import matplotlib.pyplot as plt
 
-def plot_results(history):
+def plot_results(history, epochs=6):
   acc = history.history['categorical_accuracy']
   val_acc = history.history['val_categorical_accuracy']
 
   loss = history.history['loss']
   val_loss = history.history['val_loss']
 
-  epochs_range = range(6)
+  epochs_range = range(epochs)
 
   plt.figure(figsize=(8, 8))
   plt.subplot(1, 2, 1)
