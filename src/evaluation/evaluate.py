@@ -2,13 +2,6 @@ import mlflow
 import mlflow.keras
 import tensorflow as tf
 
-
-def extract_features_labels(example):
-
-    x = example['image']
-    y = example['label']
-    return x, y
-
 def evaluate_model(model: tf.keras.Model, val_ds: tf.data.Dataset):
 
     
