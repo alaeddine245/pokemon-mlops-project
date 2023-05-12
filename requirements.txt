@@ -7,3 +7,5 @@ mlflow
 kaggle
 pytest
 pylint
+opentelemetry-api 
+opentelemetry-sdk
