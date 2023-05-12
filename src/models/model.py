@@ -12,5 +12,5 @@ def transfer_learning(model, number_classes, learning_rate):
   model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss='categorical_crossentropy', metrics=[keras.metrics.CategoricalAccuracy(), keras.metrics.Precision(), keras.metrics.Recall()])
   return model
 
-eff_net=EfficientNetV2B2(input_shape=(224,224,3),weights='imagenet',include_top=False)
-eff_net = transfer_learning(eff_net, 151, 0.001)
+model=EfficientNetV2B2(input_shape=(224,224,3),weights='imagenet',include_top=False)
+model = transfer_learning(model, 151, 0.001)
