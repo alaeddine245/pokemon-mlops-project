@@ -4,10 +4,13 @@ from preprocessing.preprocess_split import preprocess_split_data
 from training.train import train
 from evaluation.evaluate import evaluate_model
 from visualization.plot_results import plot_results
-
+from mlflow_setup import setup_mlflow
 import mlflow
 
 if __name__ == '__main__':
+    # Setup MLflow
+    setup_mlflow(EXPERIMENT_NAME)
+
     # Load the model
     model = load_model(IMG_WIDTH, IMG_HEIGHT, NUMBER_CLASSES, CHANNELS, LEARNING_RATE)
 
