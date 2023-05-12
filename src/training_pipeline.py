@@ -11,7 +11,7 @@ if __name__ == '__main__':
     setup_mlflow(EXPERIMENT_NAME)
 
     # Load the model
-    model = load_model(IMG_WIDTH, IMG_HEIGHT, NUMBER_CLASSES, CHANNELS, LEARNING_RATE)
+    model = load_model(IMG_WIDTH, IMG_HEIGHT, CHANNELS,NUMBER_CLASSES, LEARNING_RATE)
 
     # Preprocess the data
     train_ds, val_ds = preprocess_split_data(
