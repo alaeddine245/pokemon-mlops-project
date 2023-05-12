@@ -5,7 +5,6 @@ from training.train import train
 from evaluation.evaluate import evaluate_model
 from visualization.plot_results import plot_results
 from mlflow_setup import setup_mlflow
-import mlflow
 
 if __name__ == '__main__':
     # Setup MLflow
@@ -36,3 +35,4 @@ if __name__ == '__main__':
 
     # Visualize the results
     plot_results(history=history, epochs=EPOCHS)
+    

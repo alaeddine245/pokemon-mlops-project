@@ -33,3 +33,4 @@ def evaluate_model(model: tf.keras.Model, val_ds: tf.data.Dataset):
         mlflow.log_metric("test_recall", recall)
         mlflow.log_metric("test_f1", f1)
         mlflow.log_metric("test_auc", auc)
+        
