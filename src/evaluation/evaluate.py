@@ -2,7 +2,17 @@ import mlflow
 import mlflow.keras
 import tensorflow as tf
 
-def evaluate_model(model: tf.keras.Model, X_test: list, y_test: list):
+
+def extract_features_labels(example):
+
+    x = example['image']
+    y = example['label']
+    return x, y
+
+def evaluate_model(model: tf.keras.Model, val_ds: tf.data.Dataset):
+
+    X_test, y_test = zip(*val_ds.map(extract_features_labels))
+
     with mlflow.start_run():
         # Log the model architecture
         mlflow.keras.log_model(model, "model")

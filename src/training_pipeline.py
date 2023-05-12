@@ -1,5 +1,5 @@
 from constants import *
-from models import load_model
+from models.model import load_model
 from preprocessing.preprocess_split import preprocess_split_data
 from training.train import train
 from evaluation.evaluate import evaluate_model
@@ -9,7 +9,7 @@ import mlflow
 
 if __name__ == '__main__':
     # Load the model
-    model = load_model.load_model()
+    model = load_model(IMG_WIDTH, IMG_HEIGHT, NUMBER_CLASSES, CHANNELS, LEARNING_RATE)
 
     # Preprocess the data
     train_ds, val_ds = preprocess_split_data(
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     )
 
     # Train the model
-    trained_model = train(
+    trained_model, history = train(
         model=model,
         train_ds=train_ds,
         val_ds=val_ds,
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     )
 
     # Evaluate the model
-    evaluate_model()
+    evaluate_model(model=trained_model, val_ds=val_ds)
 
     # Visualize the results
-    plot_results()
+    plot_results(history=history, epochs=EPOCHS)
