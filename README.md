@@ -1,6 +1,10 @@
 # pokemon-mlops-project
 
 mlflow server: http://mlops.uksouth.cloudapp.azure.com:5000
+launch mlflow server (hoster on azure)
+```
+mlflow server -h 0.0.0.0
+```
 
 Launch training 
 ```
