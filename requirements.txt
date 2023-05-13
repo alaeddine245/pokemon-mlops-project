@@ -9,3 +9,5 @@ pytest
 pylint
 opentelemetry-api 
 opentelemetry-sdk
+opentelemetry-instrumentation
+opentelemetry-distro
